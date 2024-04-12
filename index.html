@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown and Fullscreen Iframe</title>
+</head>
+<body>
+    <!-- Display the countdown timer -->
+    <p id="demo"></p>
+
+    <!-- Hidden iframe -->
+    <iframe id="myIframe" style="display: none;"></iframe>
+
+    <script>
+        // Set the release date (4 days from now)
+        var releaseDate = new Date();
+        releaseDate.setDate(releaseDate.getDate() + 0); // Fixed release date
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = releaseDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+
+                // Show the button when countdown ends
+                var button = document.createElement("button");
+                button.innerText = "Open Fullscreen Iframe";
+                button.onclick = openFullscreenIframe;
+                document.body.appendChild(button);
+            }
+        }, 1000);
+
+        // Function to open fullscreen iframe
+        function openFullscreenIframe() {
+            var iframe = document.getElementById("myIframe");
+            iframe.src = "https://elite.quaixy.net"; // Set iframe source to elite.quaixy.net
+            iframe.style.display = "block";
+            document.documentElement.requestFullscreen();
+        }
+    </script>
+</body>
+</html>
