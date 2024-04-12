@@ -1,53 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown and Fullscreen Iframe</title>
+  <script type="application/javascript">
+    window.tiledeskSettings= 
+    {
+        projectid: "6615445c38b67d001348b5d1"
+    };
+    (function(d, s, id) { 
+        var w=window; var d=document; var i=function(){i.c(arguments);};
+        i.q=[]; i.c=function(args){i.q.push(args);}; w.Tiledesk=i;                    
+        var js, fjs=d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js=d.createElement(s); 
+        js.id=id; js.async=true; js.src="https://widget.tiledesk.com/v6/launch.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document,'script','tiledesk-jssdk'));
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Schoology</title>
+  <link rel="shortcut icon" type="image/png" href="/schoology-logo.png"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+    }
+    /* Navbar Styles */
+    nav {
+      background-color: black;
+      overflow: hidden;
+      width: 100%;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    /* Container Styles */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+    }
+    /* Button Styles */
+    .button {
+      padding: 15px 30px;
+      font-size: 1.1em;
+      background-color: #3af;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #2ac;
+    }
+    /* Countdown Timer Styles */
+    #demo {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    /* Script Section */
+    #scriptSection {
+      display: none;
+      text-align: left;
+      padding: 20px;
+    }
+  </style>
+  <script>
+    function toggleScriptSection() {
+      var scriptSection = document.getElementById("scriptSection");
+      if (scriptSection.style.display === "none") {
+        scriptSection.style.display = "block";
+      } else {
+        scriptSection.style.display = "none";
+      }
+    }
+  </script>
 </head>
 <body>
-    <!-- Display the countdown timer -->
-    <p id="demo"></p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="premium.html">Premium</a>
+    <a href="ultimate.html">Ultimate</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="enterpriseprox.html">MN Secure Browser</a>
+    <a href="https://mnsupport.ladesk.com/">MN Games Support</a>
+    <a href="elite.html">Elite</a>
+  </nav>
 
-    <!-- Hidden iframe -->
-    <iframe id="myIframe" style="display: none;"></iframe>
+  <h1>Elite is coming... Are you ready?</h1>
 
-    <script>
-        // Set the release date (4 days from now)
-        var releaseDate = new Date();
-        releaseDate.setDate(releaseDate.getDate() + 0); // Fixed release date
+  <!-- Display the countdown timer -->
+  <p id="demo"></p>
 
-        // Update the countdown every 1 second
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = releaseDate - now;
+  <p>Information: Our developers are excited to announce that the MN Games Elite website is on the way!<br>
+  We do not have a set release date but a release date will be posted here when it releases.<br>
+  (Update) My name is Nolan! I am one of the lead developers of MN Games! I am here to explain some of the features on MN Games to you.<br>
+  Here are some of the game sites that might be accessible to you in the new site (This is not a guarantee just a plan):<br>
+  - Shell Shockers<br>
+  - Among Us (Probably a popular remake)<br>
+  - Roblox (Big if on this one depends on the site that Roblox is on)<br>
+  - Fortnite (if our site that we host it on works)<br>
+  Those were just some of the many websites that could be on the new site.<br>
+  Elite will focus much more on online games and less on game websites like Ultimate.<br>
+  There will be much more information to come and this is where the information will be posted! If you have any questions, contact us!</p>
 
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <button class="button" onclick="toggleScriptSection()">Show Page Source</button>
 
-            document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  <div id="scriptSection">
+    <pre>
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang="en"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Home | Schoology&lt;/title&gt;
+        &lt;link rel="shortcut icon" type="image/png" href="/schoology-logo.png"/&gt;
+        &lt;style&gt;
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+    }
+    /* Navbar Styles */
+    nav {
+      background-color: black;
+      overflow: hidden;
+      width: 100%;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    /* Container Styles */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+    }
+    /* Button Styles */
+    .button {
+      padding: 15px 30px;
+      font-size: 1.1em;
+      background-color: #3af;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #2ac;
+    }
+    /* Countdown Timer Styles */
+    #demo {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    /* Script Section */
+    #scriptSection {
+      display: none;
+      text-align: left;
+      padding: 20px;
+    }
+        &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;nav&gt;
+          &lt;a href="index.html"&gt;Home&lt;/a&gt;
+          &lt;a href="premium.html"&gt;Premium&lt;/a&gt;
+          &lt;a href="ultimate.html"&gt;Ultimate&lt;/a&gt;
+          &lt;a href="tournaments.html"&gt;Tournaments&lt;/a&gt;
+          &lt;a href="enterpriseprox.html"&gt;Enterprise Proxy and Websites&lt;/a&gt;
+          &lt;a href="https://mnsupport.ladesk.com/"&gt;MN Games Support&lt;/a&gt;
+          &lt;a href="elite.html"&gt;Elite&lt;/a&gt;
+        &lt;/nav&gt;
 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
+        &lt;h1&gt;Elite is coming... Are you ready?&lt;/h1&gt;
 
-                // Show the button when countdown ends
-                var button = document.createElement("button");
-                button.innerText = "Open Fullscreen Iframe";
-                button.onclick = openFullscreenIframe;
-                document.body.appendChild(button);
-            }
-        }, 1000);
+        <!-- Display the countdown timer -->
+        &lt;p id="demo"&gt;&lt;/p&gt;
 
-        // Function to open fullscreen iframe
-        function openFullscreenIframe() {
-            var iframe = document.getElementById("myIframe");
-            iframe.src = "https://elite.quaixy.net"; // Set iframe source to elite.quaixy.net
-            iframe.style.display = "block";
-            document.documentElement.requestFullscreen();
-        }
-    </script>
+        &lt;p&gt;Information: Our developers are excited to announce that the MN Games Elite website is on the way!&lt;br&gt;
+        We do not have a set release date but a release date will be posted here when it releases.&lt;br&gt;
+        (Update) My name is Nolan! I am one of the lead developers of MN Games! I am here to explain some of the features on MN Games to you.&lt;br&gt;
+        Here are some of the game sites that might be accessible to you in the new site (This is not a guarantee just a plan):&lt;br&gt;
+        - Shell Shockers&lt;br&gt;
+        - Among Us (Probably a popular remake)&lt;br&gt;
+        - Roblox (Big if on this one depends on the site that Roblox is on)&lt;br&gt;
+        - Fortnite (if our site that we host it on works)&lt;br&gt;
+        Those were just some of the many websites that could be on the new site.&lt;br&gt;
+        Elite will focus much more on online games and less on game websites like Ultimate.&lt;br&gt;
+        There will be much more information to come and this is where the information will be posted! If you have any questions, contact us!&lt;/p&gt;
+
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </pre>
+  </div>
+
+  <script>
+    // Set the release date (4 days from now)
+    var releaseDate = new Date();
+    releaseDate.setDate(releaseDate.getDate() + 0); // Fixed release date
+
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = releaseDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+
+        // Show the button when countdown ends
+        var button = document.createElement("button");
+        button.className = "button";
+        button.innerText = "Ultimate Games: Online (Unblocked)";
+        button.onclick = openSecureBrowser;
+        document.body.appendChild(button);
+      }
+    }, 1000);
+
+    // Function to open secure browser
+    function openSecureBrowser() {
+      var newWindow = window.open('about:blank', '_blank');
+      newWindow.document.write('<html><head><title>MN Games Secure Browser</title></head><body><iframe src="https://zxcvbnm.hkmtta.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe></body></html>');
+    }
+  </script>
 </body>
 </html>
